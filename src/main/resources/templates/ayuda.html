@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" href="img/logo.ico" type="image/x-icon">
+<head>
+    <header th:replace="~{template :: header}"></header>
+</head>
+<body style="color: white; background-color: white">
+    <div class="container-fluid">
+
+        <nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+
+        <main role="main" class="col-md-10 offset-md-2 main-content">
+
+            <br/>
+            <br/>
+
+            <div class="container mt-4" style="color: gray;">
+                <h1 class="text-center">Proyecto Académico: VidaFarma</h1>
+
+                <br/>
+
+                <hr/>
+
+                <br/>
+
+                <h2>Descripción del Proyecto:</h2>
+                <p>
+                    El proyecto de implementación de un ChatBot para ventas en farmacias busca modernizar las operaciones de venta, mejorar la eficiencia y reducir costos. A través de la tecnología, se pretende brindar una experiencia de compra más satisfactoria para los clientes. Sin embargo, se requiere una planificación cuidadosa, capacitación del personal y atención a la seguridad de los datos para garantizar el éxito a largo plazo.
+                </p>
+
+                <h2 class="mt-4">Participantes del Proyecto:</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ROXANA MARIBEL</td>
+                            <td>VÍLCHEZ BACA</td>
+                            <td>ALUMNO</td>                            
+                        </tr>
+                        <tr>
+                            <td>CYNTHIA MARIANGELA</td>
+                            <td>CERNA CUYATTI</td>
+                            <td>ALUMNO</td>                            
+                        </tr>
+                        <tr>
+                            <td>LOURDES LIZETT</td>
+                            <td>CABANILLAS GUERRERO</td>
+                            <td>ALUMNO</td>                            
+                        </tr>
+                        <tr>
+                            <td>ITALO MAYCOL</td>
+                            <td>ENCARNACION CUEVA</td>
+                            <td>ALUMNO</td>
+                        </tr>
+                        <tr>
+                            <td>ALEXANDRA</td>
+                            <td>RONDÁN LIZANA</td>
+                            <td>ALUMNO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+</body>
+</html>

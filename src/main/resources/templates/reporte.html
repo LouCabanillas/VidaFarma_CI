@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" href="img/logo.ico" type="image/x-icon">
+<head>
+    <header th:replace="~{template :: header}"></header>    
+</head>
+<body style="color: white; background-color: white">
+    <div class="container-fluid">
+
+        <nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+
+        <main role="main" class="col-md-10 offset-md-2 main-content">
+            <div class="jumbotron">
+                <h1 class="display-4 mx-4">Generación de Reportes</h1>
+            </div>
+
+            <div class="container mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Generar Reporte</h1>
+                        <form th:action="@{/reportes/generar}" method="get">
+                            <div class="mb-3">
+                                <label for="tabla" class="form-label">Selecciona un tipo de informe:</label>
+                                <select name="tabla" id="tabla" class="form-select">
+                                    <option value="clientesVF">Informe de Clientes</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tabla" class="form-label">Selecciona formato:</label>
+                                <select name="formato" id="formato" class="form-select">
+                                    <option value="pdf">PDF</option>                                    
+                                    <option value="xml">XML</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Generar Reporte</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+</body>
+</html>

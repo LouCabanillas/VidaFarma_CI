@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<link rel="icon" href="img/logo.ico" type="image/x-icon">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <header th:replace="~{template :: header}"></header>
+</head>
+
+<body style="color: white; background-color: white">
+	<div class="container-fluid">
+		
+		<nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+		
+		<main role="main" class="col-md-10 offset-md-2 main-content">
+			<div class="jumbotron">
+				<h1 class="display-4 mx-4">Mantenimiento de Detalle Ventas</h1>
+			</div>
+
+			<div class="mt-3 mx-2">
+				<a href="detalleVentas/nuevo" class="btn btn-success">Agregar Detalle Venta</a>
+			</div>
+			
+			<table class="table table-hover">
+				<thead>					
+					<tr>
+						<th>Id</th>
+						<th>DetalleVenta</th>
+						<th>Producto</th>
+						<th>Cantidad</th>
+						<th colspan="2">Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="model : ${detalleVentas}">
+						
+						<th th:text="${model.getIdDetalleVenta()}"></th>
+						<th th:text="${'CODIGO : '+model.getVenta().getIdVenta()}"></th>
+						<th th:text="${model.getProducto().getNombre()}"></th>
+						<th th:text="${model.getCantidad()}"></th>
+						<td>
+							<a th:href="@{/detalleVentas/get/{id}(id=${model.getIdDetalleVenta()})}"
+								href="#" 
+								class="btn btn-sm btn-warning">
+								Editar
+							</a>
+						</td>
+						<td>
+							<a th:href="@{/detalleVentas/delete(id=${model.getIdDetalleVenta()})}"
+								href="#" onclick="return(confirm('¿Deseas eliminar?'));"
+								class="btn btn-sm btn-danger">
+								Eliminar
+							</a>
+						</td>
+						
+					</tr>
+				
+				<tbody>
+			</table>
+			
+		</main>
+
+
+
+	</div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<link rel="icon" href="../../img/logo.ico" type="image/x-icon">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <header th:replace="~{template :: header}"></header>
+</head>
+
+<body style="background-color: white">
+	<div class="container-fluid">
+		
+		<nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+		
+		<main role="main" class="col-md-10 offset-md-2 main-content">
+			<div class="jumbotron">
+				<h1 class="display-4 mx-4">Actualizar Productos</h1>				
+			</div>
+			
+			<form action="#" th:action="@{/productos/update}" th:object="${producto}" method="post" novalidate>
+			    <div class="my-2">
+			        <label class="form-label">ID</label>
+			        <input type="text" class="form-control disabled-input" th:field="*{idProducto}" readonly="readonly"/>
+			        <p class="alert alert-warning mt-2" 
+			            th:if="${#fields.hasErrors('idProducto')}"
+			            th:errors="*{idProducto}"></p>
+			    </div>
+				<div class="my-2">
+					<label class="form-label">Nombre</label>
+					<input type="text" th:field="*{nombre}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('nombre')}"
+					   th:errors="*{nombre}"></p>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Descripción</label>
+					<input type="text" th:field="*{descripcion}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('descripcion')}"
+					   th:errors="*{descripcion}"></p>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Marca</label>
+					<input type="text" th:field="*{marca}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('marca')}"
+					   th:errors="*{marca}"></p>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Presentacion</label>
+					<input type="text" th:field="*{presentacion}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('presentacion')}"
+					   th:errors="*{presentacion}"></p>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Stock</label>
+					<input type="number" th:field="*{stock}" class="form-control" autocomplete="off"/>
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('stock')}"
+					   th:errors="*{stock}"></p>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Precio</label>
+					<input type="number" th:field="*{precio}" class="form-control" autocomplete="off"/>
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('precio')}"
+					   th:errors="*{precio}"></p>
+				</div>
+			    <p class="text-center mt-3">
+			        <button type="submit" class="btn btn-success mx-3">Actualizar</button>
+			        <a th:href="@{/productos}" class="btn btn-secondary mx-3">Regresar</a>
+			    </p>
+			</form>
+			
+		</main>
+
+
+
+	</div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+	<script>
+		$('#fechaNacimiento').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es"
+        });
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<link rel="icon" href="../../img/logo.ico" type="image/x-icon">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <header th:replace="~{template :: header}"></header>
+</head>
+
+<body style="background-color: white">
+	<div class="container-fluid">
+		
+		<nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+		
+		<main role="main" class="col-md-10 offset-md-2 main-content">
+			<div class="jumbotron">
+				<h1 class="display-4 mx-4">Actualizar Ventas</h1>				
+			</div>
+			
+			<form action="#" th:action="@{/ventas/update}" th:object="${venta}" method="post">
+			    <div class="my-2">
+			        <label class="form-label">ID</label>
+			        <input type="text" class="form-control disabled-input" th:field="*{idVenta}" readonly="readonly"/>
+			        <p class="alert alert-warning mt-2" 
+			            th:if="${#fields.hasErrors('idVenta')}"
+			            th:errors="*{idVenta}"></p>
+			    </div>
+				<div class="my-2">
+					<label class="form-label">Cliente</label>
+					<select class="form-select" th:field="*{cliente}">
+						<option value="" selected>Seleccionar</option>
+						<option th:each="obj : ${clientes}" th:value="${obj.idCliente}" th:text="${obj.nombre + ' ' + obj.apePaterno + ' ' + obj.apeMaterno}"></option>
+					</select>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Empleado</label>
+					<select class="form-select" th:field="*{empleado}">
+						<option value="" selected>Seleccionar</option>
+						<option th:each="obj : ${empleados}" th:value="${obj.idEmpleado}" th:text="${obj.nombre + ' ' + obj.apePaterno + ' ' + obj.apeMaterno}"></option>
+					</select>
+				</div>
+				<div class="my-2">
+					<label class="form-label">Fecha</label>
+					<input type="text" th:field="*{fecha}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('fecha')}"
+					   th:errors="*{fecha}"></p>
+				</div>
+			    <p class="text-center mt-3">
+			        <button type="submit" class="btn btn-success mx-3">Actualizar</button>
+			        <a th:href="@{/ventas}" class="btn btn-secondary mx-3">Regresar</a>
+			    </p>
+			</form>
+			
+		</main>
+
+
+
+	</div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+	<script>
+		$('#fecha').datepicker({
+            format: "dd/mm/yyyy",
+            language: "es"
+        });
+	</script>
+
+</body>
+
+</html>

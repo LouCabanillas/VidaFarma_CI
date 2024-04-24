@@ -1,0 +1,29 @@
+<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<link rel="icon" href="img/icon.png" type="image/x-icon">
+<header th:replace="~{template :: header}"></header>
+
+	<div class="container-fluid">
+		<nav th:replace="~{template :: sideSuperior}"></nav>
+        <div th:replace="~{template :: sideInferior}"></div>
+
+		<main role="main" class="col-md-10 offset-md-2 main-content">
+			<div class="jumbotron">
+				<h1 class="display-4 mx-4">¡Bienvenido al Vida Farma!</h1>
+				<p class="lead mx-4">Selecciona una opción del menú para visualizar el
+					contenido correspondiente.</p>
+			</div>
+			<div class="main-content-img-container">
+				<img class="main-content-img"
+					src="img/Banner04.jpeg" alt="Logo">
+			</div>
+		</main>
+
+	</div>
+
+	<header th:replace="~{template :: footer}"></header>
+
+</body>
+
+</html>

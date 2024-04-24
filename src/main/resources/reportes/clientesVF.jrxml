@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="inquilinos" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e346602b-d5e5-49e3-8ec1-de32d29b85ad">
+	<property name="ireport.zoom" value="1.331000000000001"/>
+	<property name="ireport.x" value="106"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idCliente" class="java.lang.Long"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="apePaterno" class="java.lang.String"/>
+	<field name="correo" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="dniCliente" class="java.lang.String"/>
+	<field name="apeMaterno" class="java.lang.String"/>
+	<field name="fechaNacimiento" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="89" width="802" height="30" forecolor="#09B961" uuid="9a82a136-6699-444f-ae51-e7382bcb643c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Clientes]]></text>
+			</staticText>
+			<image>
+				<reportElement x="251" y="6" width="301" height="69" uuid="5ec67172-9745-470b-937f-5aeea4c8960f"/>
+				<imageExpression><![CDATA["C:\\Users\\Gian\\Desktop\\Logo.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="50" height="30" uuid="33e058a3-9ff6-4261-a665-b49f3e9a0ca9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="0" width="143" height="30" uuid="ab37cf10-c519-47b7-9d8a-77888b45c8fb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="0" width="132" height="30" uuid="3213a12b-d2a7-45c3-b19f-c84171bc9976"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="0" width="132" height="30" uuid="e0a45d61-44b1-4b54-8337-7409bbe1eedf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="0" width="82" height="30" uuid="5a2522b4-0a5c-4cdf-9304-d4d7ded37f47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="539" y="0" width="126" height="30" uuid="757b10a7-6017-499b-828b-b30e648bc6d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="665" y="0" width="137" height="30" uuid="dbf1fbb8-7338-4e5a-b02d-a200f4a84913"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha Nacimiento]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="50" height="20" uuid="ddacd7a6-fa04-4901-a14b-5286f02b3db8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="2" width="143" height="20" uuid="c2466a42-dfc6-43f3-a556-41d5d8ada631"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="193" y="2" width="132" height="20" uuid="d6720282-1803-4081-82ed-629e0ad6abc2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{apePaterno} + ' ' + $F{apeMaterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="325" y="2" width="132" height="20" uuid="caa14b94-c547-431c-a295-9e2d66880071"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="457" y="2" width="82" height="20" uuid="69d93bdc-c152-4e98-b0bc-e5cc32879178"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="539" y="2" width="126" height="20" uuid="04d603c8-7cbe-4c67-bc44-dff832f3f424"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dniCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="2" width="137" height="20" uuid="fbe03c08-f45b-4bba-aaef-d898d88c6566"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
