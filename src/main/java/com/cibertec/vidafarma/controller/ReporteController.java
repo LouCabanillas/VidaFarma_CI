@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 import com.cibertec.vidafarma.entity.ClienteEntity;
 import com.cibertec.vidafarma.services.ClienteService;
-import com.cibertec.vidafarma.services.JasperService;
+import com.cibertec.vidafarma.reporteria.JasperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;

@@ -1,4 +1,4 @@
-package com.cibertec.vidafarma.services;
+package com.cibertec.vidafarma.reporteria;
 
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;

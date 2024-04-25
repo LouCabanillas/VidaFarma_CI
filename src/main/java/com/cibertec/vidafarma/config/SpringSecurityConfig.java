@@ -1,26 +1,43 @@
 package com.cibertec.vidafarma.config;
 
+import com.cibertec.vidafarma.services.impl.UserDetailsServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
-public class SpringSecurityConfig {
+public class SpringSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
+
+	@Autowired
+	private UserDetailsServiceImpl userDetailsService;
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		
-		http.authorizeHttpRequests(
+		http
+				.csrf(AbstractHttpConfigurer::disable)
+				.authorizeHttpRequests(
 	            auth -> auth
-	            	.requestMatchers("/login", "/login.html", "/api/clientes")
+	            	.requestMatchers(
+							"/clientes/*",
+							"/clientes",
+							"/login",
+							"/login.html",
+							"/api/producto")
 	            	.permitAll()
 	            	.requestMatchers(
 	                        "/js/**",
@@ -38,25 +55,13 @@ public class SpringSecurityConfig {
 	                    .permitAll()
 	            )
 	            .logout(logout -> logout.logoutUrl("/signout").permitAll());
-	 
+
 	    return http.build();
 	}
 
 	@Bean
-    public UserDetailsService userDetailsService() {
-    UserDetails user =
-         User.builder()
-            .username("root")
-            .password(passwordEncoder().encode("Cl@v3990"))
-            .roles("USER")
-            .build();
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-    return new InMemoryUserDetailsManager(user);
-    }
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-    }
-    
 }

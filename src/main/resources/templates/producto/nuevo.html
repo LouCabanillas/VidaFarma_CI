@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<link rel="icon" href="../img/logo.ico" type="image/x-icon">
+<link rel="icon" href="../img/logo.png" type="image/x-icon">
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
     <header th:replace="~{template :: header}"></header>
 </head>
 
@@ -46,13 +47,16 @@
 					   th:if="${#fields.hasErrors('marca')}"
 					   th:errors="*{marca}"></p>
 				</div>
-			    <div class="my-2">
-			        <label class="form-label">Presentacion</label>
-			        <input type="text" th:field="*{presentacion}" class="form-control" autocomplete="off" />
-			        <p class="alert alert-warning mt-2" 
-			            th:if="${#fields.hasErrors('presentacion')}"
-			            th:errors="*{presentacion}"></p>
-			    </div>
+				<div class="my-2">
+					<label class="form-label">Presentación</label>
+					<select th:field="*{presentacion}" class="form-control">
+						<option value="Unidad">Unidad</option>
+						<option value="Blister">Blister</option>
+						<option value="Frasco">Frasco</option>
+						<option value="Caja">Caja</option>
+					</select>
+					<p class="alert alert-warning mt-2" th:if="${#fields.hasErrors('presentacion')}" th:errors="*{presentacion}"></p>
+				</div>
 			    <div class="my-2">
 			        <label class="form-label">Stock</label>
 			        <input type="number" th:field="*{stock}" class="form-control" autocomplete="off"/>

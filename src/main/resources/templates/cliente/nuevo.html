@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<link rel="icon" href="../img/logo.ico" type="image/x-icon">
+<link rel="icon" href="../img/logo.png" type="image/x-icon">
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
     <header th:replace="~{template :: header}"></header>
 </head>
 
@@ -74,6 +75,39 @@
 			            th:if="${#fields.hasErrors('fechaNacimiento')}"
 			            th:errors="*{fechaNacimiento}"></p>
 			    </div>
+
+				<hr>
+
+				<div class="my-2">
+					<label class="form-label" style="color: #1AB06C;font-weight: bold;">&nbsp; SEGURIDAD Y ACCESOS</label>
+				</div>
+
+				<hr>
+
+				<div class="my-2">
+					<label class="form-label">Usuario</label>
+					<input type="text" th:field="*{username}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('username')}"
+					   th:errors="*{username}"></p>
+				</div>
+
+				<div class="my-2">
+					<label class="form-label">Password</label>
+					<input type="password" th:field="*{password}" class="form-control" autocomplete="off" />
+					<p class="alert alert-warning mt-2"
+					   th:if="${#fields.hasErrors('password')}"
+					   th:errors="*{password}"></p>
+				</div>
+
+				<div class="my-2">
+					<label class="form-label">Role</label>
+					<select th:field="*{role}" class="form-control">
+						<option value="USER">User</option>
+						<option value="ADMIN">Admin</option>
+					</select>
+					<p class="alert alert-warning mt-2" th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></p>
+				</div>
 
 			    <p class="text-center mt-3">
 			        <button type="submit" class="btn btn-success mx-3">Agregar</button>
