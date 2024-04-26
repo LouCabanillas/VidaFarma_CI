@@ -33,6 +33,15 @@
 			            th:if="${#fields.hasErrors('nombre')}" 
 			            th:errors="*{nombre}"></p>
 			    </div>
+				<div class="my-2">
+					<label class="form-label">Tipo</label>
+					<select th:field="*{tipo}" class="form-control">
+						<option value="Medicamentos">Medicamentos</option>
+						<option value="Cuidado Personal">Cuidado Personal</option>
+						<option value="Cuidado del Hogar">Cuidado del Hogar</option>
+					</select>
+					<p class="alert alert-warning mt-2" th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></p>
+				</div>
 			    <div class="my-2">
 			        <label class="form-label">Descripción</label>
 			        <input type="text" th:field="*{descripcion}" class="form-control" autocomplete="off" />

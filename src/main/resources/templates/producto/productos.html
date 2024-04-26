@@ -27,6 +27,7 @@
 					<tr>
 						<th>Id</th>
 						<th>Nombre</th>
+						<th>Tipo</th>
 						<th>Descripción</th>
 						<th>Marca</th>
 						<th>Presentación</th>
@@ -39,6 +40,7 @@
 					<tr th:each="model : ${productos}">
 						<th th:text="${model.getIdProducto()}"></th>
 						<th th:text="${model.getNombre()}"></th>
+						<th th:text="${model.getTipo()}"></th>
 						<th th:text="${model.getDescripcion()}"></th>
 						<th th:text="${model.getMarca()}"></th>
 						<th th:text="${model.getPresentacion()}"></th>

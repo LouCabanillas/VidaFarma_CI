@@ -18,6 +18,9 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Long crear(ClienteEntity o) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(o.getPassword());
+        o.setPassword(encodedPassword);
         ClienteEntity obj = repository.save(o);
         return obj.getIdCliente();
     }

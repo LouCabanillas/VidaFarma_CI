@@ -40,4 +40,7 @@ public class ProductoEntity {
     @Column(name = "precio")
     private double precio;
 
+    @Column(name = "tipo")
+    private String tipo;
+
 }

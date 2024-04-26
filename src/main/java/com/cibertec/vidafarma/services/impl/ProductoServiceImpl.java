@@ -40,4 +40,19 @@ public class ProductoServiceImpl implements ProductoService {
     public List<ProductoEntity> listar() {
         return repository.findAll();
     }
+
+    @Override
+    public List<ProductoEntity> listarMedicamentos() {
+        return repository.findByTipo("Medicamentos");
+    }
+
+    @Override
+    public List<ProductoEntity> listarCuidadoPersonal() {
+        return repository.findByTipo("Cuidado Personal");
+    }
+
+    @Override
+    public List<ProductoEntity> listarCuidadoHogar() {
+        return repository.findByTipo("Cuidado del Hogar");
+    }
 }

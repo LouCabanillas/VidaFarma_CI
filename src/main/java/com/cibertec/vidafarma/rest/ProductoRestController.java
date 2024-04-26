@@ -4,6 +4,7 @@ import com.cibertec.vidafarma.entity.ProductoEntity;
 import com.cibertec.vidafarma.services.ProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -17,6 +18,21 @@ public class ProductoRestController {
     @GetMapping
     public List<ProductoEntity> getAll() {
         return service.listar();
+    }
+
+    @GetMapping("/listarMedicamentos")
+    public List<ProductoEntity> listarMedicamentos() {
+        return service.listarMedicamentos();
+    }
+
+    @GetMapping("/listarCuidadoPersonal")
+    public List<ProductoEntity> listarCuidadoPersonal() {
+        return service.listarCuidadoPersonal();
+    }
+
+    @GetMapping("/listarCuidadoDelHogar")
+    public List<ProductoEntity> listarCuidadoDelHogar() {
+        return service.listarCuidadoHogar();
     }
 
 }

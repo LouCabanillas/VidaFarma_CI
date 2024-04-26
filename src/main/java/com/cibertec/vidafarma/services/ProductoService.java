@@ -11,5 +11,8 @@ public interface ProductoService {
 	ProductoEntity actualizar(ProductoEntity o);
 	void eliminar(Long id);
 	List<ProductoEntity> listar();
-	
+	List<ProductoEntity> listarMedicamentos();
+	List<ProductoEntity> listarCuidadoPersonal();
+	List<ProductoEntity> listarCuidadoHogar();
+
 }
