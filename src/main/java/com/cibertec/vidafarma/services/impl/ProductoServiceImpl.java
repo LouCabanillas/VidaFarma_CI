@@ -59,8 +59,8 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public ProductoEntity buscarMedicamento(String medicamento) {
-        return repository.findByNombreAndStockGreaterThan(medicamento, STOCK_MINIMO);
+    public ProductoEntity buscarProductoPorNombre(String nombre) {
+        return repository.findByNombreAndStockGreaterThan(nombre, STOCK_MINIMO);
     }
 
 }

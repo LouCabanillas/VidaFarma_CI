@@ -14,5 +14,5 @@ public interface ProductoService {
 	List<ProductoEntity> listarMedicamentos();
 	List<ProductoEntity> listarCuidadoPersonal();
 	List<ProductoEntity> listarCuidadoHogar();
-	ProductoEntity buscarMedicamento(String medicamento);
+	ProductoEntity buscarProductoPorNombre(String nombre);
 }

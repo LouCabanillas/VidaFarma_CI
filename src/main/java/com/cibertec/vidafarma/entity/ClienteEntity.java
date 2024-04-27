@@ -48,7 +48,7 @@ public class ClienteEntity implements UserDetails {
     private String celular;
 
     @Basic
-    @Column(nullable = false, name = "username")
+    @Column(nullable = false, name = "username", unique = true)
     String username;
 
     @Column(name = "password")
