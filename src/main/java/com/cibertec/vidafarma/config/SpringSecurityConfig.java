@@ -33,9 +33,7 @@ public class SpringSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
 				.authorizeHttpRequests(
 	            auth -> auth
 	            	.requestMatchers(
-							"/api/producto/listarMedicamentos",
-							"/api/producto/listarCuidadoPersonal",
-							"/api/producto/listarCuidadoDelHogar",
+							"/api/producto/**",
 							"/login",
 							"/login.html",
 							"/api/producto")
