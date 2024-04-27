@@ -35,7 +35,7 @@ public class ProductoRestController {
         return service.listarCuidadoHogar();
     }
 
-    @GetMapping("/buscarMedicamentos/{nombre}")
+    @GetMapping("/buscarProductoPorNombre/{nombre}")
     public ProductoEntity buscarProductoPorNombre(@PathVariable String nombre) {
         return service.buscarProductoPorNombre(nombre);
     }
