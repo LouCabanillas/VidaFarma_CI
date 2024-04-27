@@ -36,7 +36,7 @@ public class ProductoRestController {
     }
 
     @GetMapping("/buscarMedicamentos/{medicamento}")
-    public List<ProductoEntity> buscarMedicamentos(@PathVariable String medicamento) {
+    public ProductoEntity buscarMedicamentos(@PathVariable String medicamento) {
         return service.buscarMedicamento(medicamento);
     }
 
