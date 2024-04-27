@@ -35,6 +35,7 @@ public class SpringSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
 	            	.requestMatchers(
 							"/api/producto/**",
 							"/api/producto/buscarProductoPorNombre/**",
+							"/api/producto/buscarProductosPorFragmentoNombre/**",
 							"/login",
 							"/",
 							"/login.html",

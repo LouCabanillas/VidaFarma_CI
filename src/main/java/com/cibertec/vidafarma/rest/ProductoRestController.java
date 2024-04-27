@@ -40,4 +40,9 @@ public class ProductoRestController {
         return service.buscarProductoPorNombre(nombre);
     }
 
+    @GetMapping("/buscarProductosPorFragmentoNombre/{fragmento}")
+    public List<ProductoEntity> buscarProductosPorFragmentoNombre(@PathVariable String fragmento) {
+        return service.buscarProductoPorFramentoNombre(fragmento);
+    }
+
 }

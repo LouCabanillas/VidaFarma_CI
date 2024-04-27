@@ -63,4 +63,9 @@ public class ProductoServiceImpl implements ProductoService {
         return repository.findByNombreAndStockGreaterThan(nombre, STOCK_MINIMO);
     }
 
+    @Override
+    public List<ProductoEntity> buscarProductoPorFramentoNombre(String fragmento) {
+        return repository.findByNombreContainingAndStockGreaterThan(fragmento, STOCK_MINIMO);
+    }
+
 }

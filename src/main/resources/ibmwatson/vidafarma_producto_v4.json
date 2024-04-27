@@ -1,0 +1,248 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "VidaFarma"
+  },
+  "servers": [
+    {
+      "url": "https://vidafarma-09dac6c23e62.herokuapp.com/VidaFarma/api"
+    }
+  ],
+  "paths": {
+    "/producto/listarMedicamentos": {
+      "get": {
+        "summary": "Obtener todos los productos de tipo medicamento",
+        "responses": {
+          "200": {
+            "description": "Lista de productos de tipo medicamento",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idProducto": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "descripcion": {
+                        "type": "string"
+                      },
+                      "marca": {
+                        "type": "string"
+                      },
+                      "presentacion": {
+                        "type": "string"
+                      },
+                      "stock": {
+                        "type": "string"
+                      },
+                      "precio": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+	"/producto/listarCuidadoPersonal": {
+      "get": {
+        "summary": "Obtener todos los productos de tipo cuidado personal",
+        "responses": {
+          "200": {
+            "description": "Lista de productos de tipo cuidado personal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idProducto": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "descripcion": {
+                        "type": "string"
+                      },
+                      "marca": {
+                        "type": "string"
+                      },
+                      "presentacion": {
+                        "type": "string"
+                      },
+                      "stock": {
+                        "type": "string"
+                      },
+                      "precio": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+	"/producto/listarCuidadoDelHogar": {
+      "get": {
+        "summary": "Obtener todos los productos de tipo cuidado del hogar",
+        "responses": {
+          "200": {
+            "description": "Lista de productos de tipo cuidado del hogar",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idProducto": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "descripcion": {
+                        "type": "string"
+                      },
+                      "marca": {
+                        "type": "string"
+                      },
+                      "presentacion": {
+                        "type": "string"
+                      },
+                      "stock": {
+                        "type": "string"
+                      },
+                      "precio": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/producto/buscarProductoPorNombre/{nombre}": {
+      "get": {
+        "summary": "Buscar producto por Nombre",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Nombre del producto a buscar"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalles del producto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "idProducto": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "descripcion": {
+                      "type": "string"
+                    },
+                    "marca": {
+                      "type": "string"
+                    },
+                    "presentacion": {
+                      "type": "string"
+                    },
+                    "stock": {
+                      "type": "string"
+                    },
+                    "precio": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/producto/buscarProductosPorFragmentoNombre/{fragmento}": {
+      "get": {
+        "summary": "Buscar producto por Fragmento de Nombre",
+        "parameters": [
+          {
+            "name": "fragmento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Fragmento del nombre del producto a buscar"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detalles del productos encontrados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "idProducto": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "descripcion": {
+                        "type": "string"
+                      },
+                      "marca": {
+                        "type": "string"
+                      },
+                      "presentacion": {
+                        "type": "string"
+                      },
+                      "stock": {
+                        "type": "string"
+                      },
+                      "precio": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
