@@ -10,5 +10,8 @@ import java.util.List;
 public interface ProductoRepository extends JpaRepository<ProductoEntity, Long> {
 
     List<ProductoEntity> findByTipo(String tipo);
+    List<ProductoEntity> findByTipoAndStockGreaterThan(String tipo, int stock);
+
+    List<ProductoEntity> findByNombreAndStockGreaterThan(String tipo, int stock);
 
 }

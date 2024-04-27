@@ -14,6 +14,8 @@ public class ProductoServiceImpl implements ProductoService {
 	@Autowired
     ProductoRepository repository;
 
+    private static int STOCK_MINIMO = 0;
+
     @Override
     public Long crear(ProductoEntity o) {
         ProductoEntity obj = repository.save(o);
@@ -43,16 +45,22 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public List<ProductoEntity> listarMedicamentos() {
-        return repository.findByTipo("Medicamentos");
+        return repository.findByTipoAndStockGreaterThan("Medicamentos", STOCK_MINIMO);
     }
 
     @Override
     public List<ProductoEntity> listarCuidadoPersonal() {
-        return repository.findByTipo("Cuidado Personal");
+        return repository.findByTipoAndStockGreaterThan("Cuidado Personal", STOCK_MINIMO);
     }
 
     @Override
     public List<ProductoEntity> listarCuidadoHogar() {
-        return repository.findByTipo("Cuidado del Hogar");
+        return repository.findByTipoAndStockGreaterThan("Cuidado del Hogar", STOCK_MINIMO);
     }
+
+    @Override
+    public List<ProductoEntity> buscarMedicamento(String medicamento) {
+        return repository.findByNombreAndStockGreaterThan(medicamento, STOCK_MINIMO);
+    }
+
 }
