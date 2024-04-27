@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="35px" viewBox="0 0 40 35" enable-background="new 0 0 40 35" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="7.5386" y1="17.5005" x2="32.4604" y2="17.5005"><stop offset="0" style="stop-color:#DE1C3E"/><stop offset="1" style="stop-color:#004D92"/></linearGradient>
+<path fill="url(#SVGID_1_)" d="M24.849,21.546c1.642-1.832,2.665-4.287,2.665-6.988c0-5.667-4.473-10.293-9.987-10.293 c-5.514,0-9.989,4.626-9.989,10.293c0,5.668,4.475,10.294,9.989,10.294c2.245,0,4.308-0.76,5.98-2.05l7.427,7.655 c0.181,0.185,0.407,0.279,0.633,0.279c0.226,0,0.465-0.094,0.633-0.279c0.346-0.357,0.346-0.946,0-1.318L24.849,21.546z M9.347,14.558c0-4.642,3.662-8.431,8.181-8.431c4.504,0,8.181,3.774,8.181,8.431c0,4.658-3.662,8.431-8.181,8.431 S9.347,19.2,9.347,14.558z"/>
+</svg>

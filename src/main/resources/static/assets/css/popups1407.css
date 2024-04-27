@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/03/2019, 09:53:41 PM
+    Author     : Hp
+*/
+
+.popup {
+    background-color: #FFF !important;
+    /*-webkit-box-shadow: 1px 10px 100px -16px rgba(0,0,0,0.75) !important;
+    -moz-box-shadow: 1px 10px 100px -16px rgba(0,0,0,0.75) !important;
+    box-shadow: 1px 10px 100px -16px rgba(0,0,0,0.75)!important;*/
+}
+.popup h3 {
+    background-color: #004D92 !important;
+    color: #FFF !important;
+    width: 100% !important;
+    display: inline-block !important;
+}
+
+#carrito_formulario input[type="text"], 
+#carrito_formulario input[type="email"]  {
+    /*text-transform: uppercase !important;*/
+}
+
+.popup .fancybox-close-small {
+    display: block !important;
+}

@@ -36,12 +36,21 @@ public class SpringSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
 							"/api/producto/**",
 							"/api/producto/buscarProductoPorNombre/**",
 							"/login",
+							"/",
 							"/login.html",
 							"/api/producto")
 	            	.permitAll()
 	            	.requestMatchers(
 	                        "/js/**",
 	                        "/css/**",
+							"/assets/css/**",
+							"/assets/fonts/**",
+							"/assets/gif/**",
+							"/assets/images/**",
+							"/assets/img/**",
+							"/assets/js/**",
+							"/assets/sources/**",
+							"/assets/svg/**",
 	                        "/img/**",
 	                        "/webjars/**"
 	                        )
@@ -51,7 +60,7 @@ public class SpringSecurityConfig extends SecurityConfigurerAdapter<DefaultSecur
 	           )
 	            .formLogin(formLogin -> formLogin
 	                    .loginPage("/login")
-	                    .defaultSuccessUrl("/", true)
+	                    .defaultSuccessUrl("/dashboard", true)
 	                    .permitAll()
 	            )
 	            .logout(logout -> logout.logoutUrl("/signout").permitAll());
