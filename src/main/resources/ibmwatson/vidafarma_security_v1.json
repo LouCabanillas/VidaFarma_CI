@@ -1,0 +1,90 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "VidaFarma"
+  },
+  "servers": [
+    {
+      "url": "https://vidafarma-09dac6c23e62.herokuapp.com/VidaFarma/api"
+    }
+  ],
+  "paths": {
+    "/security/registrar": {
+      "post": {
+        "summary": "Registrar un nuevo cliente",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClienteEntity"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ID del cliente registrado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "idCliente": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ClienteEntity": {
+        "type": "object",
+        "properties": {
+          "idCliente": {
+            "type": "integer"
+          },
+          "dniCliente": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apePaterno": {
+            "type": "string"
+          },
+          "apeMaterno": {
+            "type": "string"
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["ROLE_USER", "ROLE_ADMIN"]
+          }
+        }
+      }
+    }
+  }
+}
