@@ -19,7 +19,7 @@ public class SecurityRestController {
 
 
     @PostMapping("/registrar")
-    public Long registrar(ClienteEntity cliente) {
+    public Long registrar(@RequestBody ClienteEntity cliente) {
         cliente.setRole(Role.USER);
         return service.crear(cliente);
     }
