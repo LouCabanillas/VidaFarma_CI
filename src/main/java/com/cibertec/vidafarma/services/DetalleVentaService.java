@@ -10,5 +10,8 @@ public interface DetalleVentaService {
 	DetalleVentaEntity actualizar(DetalleVentaEntity o);
 	void eliminar(Long id);
 	List<DetalleVentaEntity> listar();
-	
+
+	List<DetalleVentaEntity> buscarPorNombresCliente(String nombre, String paterno, String materno);
+
+    List<DetalleVentaEntity> buscarPorCorreo(String correo);
 }

@@ -39,4 +39,18 @@ public class DetalleVentaServiceImpl implements DetalleVentaService {
     public List<DetalleVentaEntity> listar() {
         return repository.findAll();
     }
+
+    @Override
+    public List<DetalleVentaEntity> buscarPorNombresCliente(String nombre, String paterno, String materno) {
+        return repository.findByVentaClienteNombreAndVentaClienteApePaternoAndVentaClienteApeMaterno(
+                nombre,
+                paterno,
+                materno
+        );
+    }
+
+    @Override
+    public List<DetalleVentaEntity> buscarPorCorreo(String correo) {
+        return repository.findByVentaClienteCorreo(correo);
+    }
 }

@@ -1,0 +1,192 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "VidaFarma"
+  },
+  "servers": [
+    {
+      "url": "https://vidafarma-09dac6c23e62.herokuapp.com/VidaFarma/api"
+    }
+  ],
+  "paths": {
+    "/security/buscarPorNombres/{nombre}/{paterno}/{materno}": {
+      "get": {
+        "summary": "Buscar clientes por nombre, apellido paterno y apellido materno",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "description": "Nombre del cliente",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paterno",
+            "in": "path",
+            "description": "Apellido paterno del cliente",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "materno",
+            "in": "path",
+            "description": "Apellido materno del cliente",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de detalles de venta para los clientes encontrados",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DetalleVentaEntity"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DetalleVentaEntity": {
+        "type": "object",
+        "properties": {
+          "idDetalleVenta": {
+            "type": "integer"
+          },
+          "venta": {
+            "$ref": "#/components/schemas/VentaEntity"
+          },
+          "producto": {
+            "$ref": "#/components/schemas/ProductoEntity"
+          },
+          "cantidad": {
+            "type": "integer"
+          }
+        }
+      },
+      "VentaEntity": {
+        "type": "object",
+        "properties": {
+          "idVenta": {
+            "type": "integer"
+          },
+          "cliente": {
+            "$ref": "#/components/schemas/ClienteEntity"
+          },
+          "empleado": {
+            "$ref": "#/components/schemas/EmpleadoEntity"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "ProductoEntity": {
+        "type": "object",
+        "properties": {
+          "idProducto": {
+            "type": "integer"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "descripcion": {
+            "type": "string"
+          },
+          "marca": {
+            "type": "string"
+          },
+          "presentacion": {
+            "type": "string"
+          },
+          "stock": {
+            "type": "integer"
+          },
+          "precio": {
+            "type": "number"
+          },
+          "tipo": {
+            "type": "string"
+          }
+        }
+      },
+      "ClienteEntity": {
+        "type": "object",
+        "properties": {
+          "idCliente": {
+            "type": "integer"
+          },
+          "dniCliente": {
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apePaterno": {
+            "type": "string"
+          },
+          "apeMaterno": {
+            "type": "string"
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "celular": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["ROLE_USER", "ROLE_ADMIN"]
+          }
+        }
+      },
+      "EmpleadoEntity": {
+        "type": "object",
+        "properties": {
+          "idEmpleado": {
+            "type": "integer"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "apellido": {
+            "type": "string"
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "correo": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
