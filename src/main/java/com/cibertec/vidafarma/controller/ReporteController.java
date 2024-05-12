@@ -40,7 +40,7 @@ public class ReporteController{
 		
 		byte[] reportContent = null;
 		
-		if(tabla.equals("clientesVF")) {
+		if(tabla.equals("clientesVF01")) {
 			reportContent = reportClienteService.getItemReport(clienteService.listar(), formato, tabla);
 		}
 
